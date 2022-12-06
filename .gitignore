@@ -1,2 +1,9 @@
 node_modules
+package-lock.json
+package.json
+.hintrc
+.stylelintrc.json
+.eslintrc.json
+
+
 
