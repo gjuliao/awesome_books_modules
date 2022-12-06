@@ -1,4 +1,4 @@
-export default function displayPage(section) {
+const displayPage = (section) => {
   const bookList = document.getElementById('book_list');
   const bookForm = document.getElementById('add_book_form');
   const contact = document.getElementById('contact');
@@ -22,4 +22,6 @@ export default function displayPage(section) {
     bookForm.style.display = 'none';
     mainH1.innerHTML = 'Contact';
   }
-}
+};
+
+export default displayPage;

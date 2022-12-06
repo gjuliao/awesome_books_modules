@@ -19,7 +19,7 @@ export default class Collection {
     this.library = [];
   }
 
-  addBook() {
+  addBook = () => {
     const id = Math.floor(Math.random() * 10000);
     const newBook = new Book(id, titleId.value, authorId.value);
     this.library.push(newBook);
@@ -28,22 +28,22 @@ export default class Collection {
   }
 
   /* Add Storage */
-  addStorage(library) {
+  addStorage = (library) => {
     localStorage.setItem('newBook', JSON.stringify(library));
   }
 
   /* Remove Storage */
-  removeElement(element) {
-    col.library = col.library.filter((i) => i.id != element);
-    this.addStorage(col.library);
-    displayBook(col.library);
+  removeElement = (element) => {
+    this.library = this.library.filter((i) => i.id != element);
   }
 }
 
 export const col = new Collection();
 
 document.addEventListener('click', (e) => {
-  Collection.prototype.removeElement(e.target.id);
+  col.removeElement(e.target.id);
+  col.addStorage(col.library);
+  displayBook(col.library);
 });
 
 const formBook = document.getElementById('book_form');
